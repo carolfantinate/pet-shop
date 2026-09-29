@@ -1,4 +1,5 @@
 import { View, TextInput, Text, TouchableOpacity } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from "react";
 import { cadastrar } from "../services/auth";
 
@@ -23,7 +24,7 @@ export default function Cadastro({ navigation }) {
     }
 
     return (
-        <View>
+        <SafeAreaView>
             <Text>Cadastro</Text>
             <TextInput
                 placeholder="Email"
@@ -35,7 +36,7 @@ export default function Cadastro({ navigation }) {
 
             <TextInput
                 placeholder="Senha"
-                value="senha"
+                value={senha}
                 onChangeText={setSenha}
                 secureTextEntry
             />
@@ -51,6 +52,6 @@ export default function Cadastro({ navigation }) {
             >
                 <Text>Já tenho uma conta</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }

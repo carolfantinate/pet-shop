@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { login } from '../services/auth'
 
 export default function Login({ navigation }) {
@@ -21,7 +22,7 @@ export default function Login({ navigation }) {
         }
     }
     return (
-        <View>
+        <SafeAreaView>
             <Text>Login</Text>
 
             <TextInput
@@ -50,6 +51,6 @@ export default function Login({ navigation }) {
             >
                 <Text>Criar uma conta</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }
