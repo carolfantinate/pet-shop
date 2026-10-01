@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Home({ navigation }) {
     return (
@@ -7,31 +8,32 @@ export default function Home({ navigation }) {
             {/* Cabeçalho */}
             <View>
                 {/* Perfil */}
-                <View style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
                     <TouchableOpacity
                         onPress={() => navigation.navigate("Perfil")}
+                        style={{ backgroundColor: '#76b0d6', padding: 10, borderRadius: 50}}
                     >
-                        <Text>👤</Text>
+                        <Ionicons name="person" size={30} color={'#fff'}/>
                     </TouchableOpacity>
-                    <Text>Olá, Usuário!</Text>
+                    <Text>Bem-vindo(a)!</Text>
                 </View>
 
                 {/* Notificações */}
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Notificacoes")}
-                    style={{ alignSelf: 'flex-end' }}
+                    style={{position: 'absolute', right: 0,  padding: 10}}
                 >
-                    <Text>🔔</Text>
+                    <Ionicons name="notifications" size={30} />
                 </TouchableOpacity>
             </View>
 
             {/* Conteúdo da Home */}
-            <View>
-                <Text>Bem-vindo ao Pet Shop!</Text>
+            <View style={{ marginTop: 20, gap: 10 }}>
+                <Text>Conheça nossos serviços!</Text>
                 <Text>
-                    🛁 Agende seu banho; 
-                    ✂️ Agende sua tosa;
-                    🩺 Agende sua consulta;
+                    🛁 Agende seu banho; {'\n'}
+                    ✂️ Agende sua tosa;{'\n'}
+                    🩺 Agende sua consulta;{'\n'}
                     🛍️ Compre nossos produtos.
                 </Text>
             </View>
